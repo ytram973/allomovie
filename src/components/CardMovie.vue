@@ -1,14 +1,14 @@
 <template>
 
 <div class="cardMovie">
-<img :src="getUrl(dataMovie.poster_path)" alt="image">
+<img :src="dataMovie.poster_path ? getUrl(dataMovie.poster_path):'./assets/img/movie_poster.jpg' " alt="image">
   
   <div class="card-content">
-    <h3>{{dataMovie.title}}</h3>
+    <h3>{{dataMovie.title ? dataMovie.title : "Aucun titre"}}</h3>
 
     <div class="card-content-desc">
         <p class="info">
-            <span class="date">{{dataMovie.release_date}}</span>
+            <span class="date">{{dataMovie.release_date ? dataMovie.release_date: "Aucune date de sortie"}}</span>
             <span class="vote">{{dataMovie.vote_average}}/10({{dataMovie.vote_count}}votes)</span>
         </p>
         <BtnFavoris/>
@@ -63,6 +63,7 @@ img{
     width: 90px;
     object-fit: cover;
     object-position: 30%;
+    height: 100%;
 }
 
 h3{

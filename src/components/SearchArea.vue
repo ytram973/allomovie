@@ -16,7 +16,7 @@ export default {
   },
   methods: {
     makeSearch() {
-        this.$emit("valdatingSearch","Coucou est moi")
+        this.$emit("validatingSearch",this.search)
     },
   },
 };
