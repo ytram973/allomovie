@@ -1,8 +1,9 @@
 <template>
   <div class="panel">
-    <h2>{{ movie.title }}</h2>
-    <img :src="getUrl(movie.poster_path)" :alt="`affiche du film ${movie.title}`">
-    <span>Date de sortie: {{movie.release_date}}</span>
+    <h2>{{ movie.title ? movie.title : 'Aucun titre !' }}</h2>
+    <img :src="movie.poster_path ? getUrl(movie.poster_path): './assets/img/movie_poster.jpg'"
+      :alt="`affiche du film ${movie.title ? movie.title :'inconnu'}`">
+    <span>Date de sortie: {{movie.release_date ? movie.release_date :'Aucune date de sortie'}}</span>
     <span>Note de {{movie.vote_average}}/10 </span>
 
 
@@ -10,7 +11,7 @@
         <li v-for= "genre of movie.genres" :key="genre.id">{{genre.name}}</li>
     </ul>
 
-<p>{{movie.overview}}</p>
+<p>{{movie.overview ? movie.overview:'Aucune description...'}}</p>
   </div>
 
 
