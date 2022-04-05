@@ -15,13 +15,8 @@ export default{
     compHeader,
    
   },
-
-
  
 }
-
-
-
 
 
 </script>
@@ -57,6 +52,8 @@ a.active{
   flex-wrap: wrap;
 }
 
-
+.notVisible{
+  visibility: hidden;
+}
 
 </style>

@@ -6,7 +6,7 @@
             <ul>
                 <!-- <li><a href="#" class="active">Accueil</a></li>
                 <li><a href="#">favoris</a></li> -->
-                <router-link to="/">go to Home</router-link>
+                <router-link to="/">Accueil</router-link>
                 <router-link to="/favoris">Favoris</router-link>
 
             </ul>

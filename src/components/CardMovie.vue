@@ -11,7 +11,7 @@
             <span class="date">{{dataMovie.release_date ? dataMovie.release_date: "Aucune date de sortie"}}</span>
             <span class="vote">{{dataMovie.vote_average}}/10({{dataMovie.vote_count}}votes)</span>
         </p>
-        <BtnFavoris/>
+        <BtnFavoris :movieID="dataMovie.id"/>
     </div>
     </div>
     </div>
