@@ -6,7 +6,7 @@
       v-for="movie of movies"
       :key="movie.id"
       :dataMovie="movie"
-      @click="selectedMovie = movie.id"
+      @click="clickMovie(movie.id)"
     ></CardMovie>
   </div>
 
@@ -28,7 +28,7 @@ export default {
     CardMovie,
     PanelMovie,
   },
-  mounted() {ù
+  mounted() {
     fetch(
       "https://api.themoviedb.org/3/movie/popular?api_key=8b7de3af7442ae1ea5548de091d89d5d&language=fr-EU&page=1"
     )
@@ -55,6 +55,14 @@ export default {
           });
       }
     },
+    clickMovie(id){
+      this.selectedMovie=id
+      const panel =document.querySelector('.panel');
+      if(panel && panel.classList.contains('notVisible')){
+
+        panel.classList.remove("notVisible")
+      }
+    }
   },
 };
 </script>

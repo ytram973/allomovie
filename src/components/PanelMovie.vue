@@ -1,5 +1,5 @@
 <template>
-  <div class="panel">
+  <div class="panel" @click="deletePanel">
     <h2>{{ movie.title ? movie.title : 'Aucun titre !' }}</h2>
     <img :src="movie.poster_path ? getUrl(movie.poster_path): './assets/img/movie_poster.jpg'"
       :alt="`affiche du film ${movie.title ? movie.title :'inconnu'}`">
@@ -45,7 +45,11 @@ export default {
   methods:{
         getUrl(url){
             return`https://image.tmdb.org/t/p/w500${url}`
-        }
+        },
+        deletePanel(){
+        const panel = document.querySelector(".panel");
+        panel.classList.add("notVisible")
+    }
     },
 };
 </script>
